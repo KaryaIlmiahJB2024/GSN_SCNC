@@ -3,14 +3,80 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GSN_SCNC</title>
-    <link rel="stylesheet" href="index.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <title>GSN Group</title>
+    <style>
+        body {
+            background-color: #121212;
+            color: #ffffff;
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .header {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            padding: 20px;
+        }
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .date-time {
+            font-size: 18px;
+        }
+        .carousel {
+            margin: 20px 0;
+            width: 80%;
+            height: 300px;
+            background-color: #333;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #888;
+        }
+        .interactive {
+            margin-top: 20px;
+            text-align: center;
+        }
+        .interactive input {
+            padding: 10px;
+            font-size: 16px;
+        }
+        .wave {
+            margin-top: 10px;
+            padding: 10px;
+            background-color: #444;
+            color: #fff;
+            cursor: pointer;
+        }
+    </style>
 </head>
 <body>
-    <div class="title">GSN_SCNC</div>
-    <div class="background"></div>
-    <script src="index.js"></script>
+    <div class="header">
+        <div class="logo">G square N</div>
+        <div class="date-time" id="date-time"></div>
+    </div>
+    <div class="carousel">(IMAGE CAROUSEL)</div>
+    <div class="interactive">
+        <div>Enter Password to Continue...</div>
+        <input type="password" placeholder="Password">
+        <div class="wave">Wave here</div>
+    </div>
+
+    <script>
+        function updateDateTime() {
+            const now = new Date();
+            const dateTimeString = now.toLocaleString();
+            document.getElementById('date-time').textContent = dateTimeString;
+        }
+        setInterval(updateDateTime, 1000);
+        updateDateTime();
+    </script>
 </body>
 </html>
 
