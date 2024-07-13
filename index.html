@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GSN Group</title>
+    <title>Cool Website</title>
     <style>
         body {
-            background-color: #121212;
+            background-color: #1a1a1a;
             color: #ffffff;
             font-family: Arial, sans-serif;
             display: flex;
@@ -16,74 +16,67 @@
             height: 100vh;
             margin: 0;
         }
-        .header {
-            width: 100%;
-            display: flex;
-            justify-content: space-between;
-            padding: 20px;
-        }
-        .logo {
-            font-size: 24px;
-            font-weight: bold;
-            display: flex;
-            align-items: center;
-        }
-        .logo img {
-            height: 50px;
-            margin-right: 10px;
-        }
-        .date-time {
-            font-size: 18px;
-        }
-        .interactive {
-            margin-top: 20px;
+        .container {
             text-align: center;
         }
-        .interactive input {
+        .logo {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+        .button {
+            background-color: #6200ea;
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 8px;
+            transition: background-color 0.3s;
+        }
+        .button:hover {
+            background-color: #3700b3;
+        }
+        .passcode {
+            margin-top: 20px;
+        }
+        .passcode input {
             padding: 10px;
             font-size: 16px;
+            border-radius: 8px;
+            border: 1px solid #6200ea;
+            margin-right: 10px;
         }
-        .wave {
-            margin-top: 10px;
-            width: 100%;
-            height: 100px;
-            background: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/85486/wave.svg') repeat-x;
-            background-size: 100% 100px;
-            animation: wave 10s linear infinite;
+        .passcode button {
+            background-color: #03dac6;
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 8px;
+            transition: background-color 0.3s;
         }
-        @keyframes wave {
-            0% {
-                background-position-x: 0;
-            }
-            100% {
-                background-position-x: 1000px;
-            }
+        .passcode button:hover {
+            background-color: #018786;
         }
     </style>
 </head>
 <body>
-    <div class="header">
-        <div class="logo">
-            <img src="images/GSNlogo.png" alt="G square N Logo">
-            G square N
+    <div class="container">
+        <div class="logo">Cool Website</div>
+        <button class="button">Button 1</button>
+        <button class="button">Button 2</button>
+        <button class="button">Button 3</button>
+        <div class="passcode">
+            <input type="password" placeholder="Enter Passcode">
+            <button>Submit</button>
         </div>
-        <div class="date-time" id="date-time"></div>
     </div>
-    <div class="interactive">
-        <div>Enter Password to Continue...</div>
-        <input type="password" placeholder="Password">
-        <div class="wave"></div>
-    </div>
-
-    <script>
-        function updateDateTime() {
-            const now = new Date();
-            const dateTimeString = now.toLocaleString();
-            document.getElementById('date-time').textContent = dateTimeString;
-        }
-        setInterval(updateDateTime, 1000);
-        updateDateTime();
-    </script>
 </body>
 </html>
+
 
